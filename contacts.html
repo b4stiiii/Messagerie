@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contacts - Ma Messageries</title><link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+        <script src="config.js" defer></script><script src="app.js" defer></script>
+    </head>
+<body data-page="contacts">
+    <header>
+        <a class="marque" href="index.html">Ma Messageries</a>
+        <nav aria-label="Navigation principale">
+            <a href="contacts.html" data-prive>Contacts</a>
+            <a href="messagerie.html" data-prive>Messagerue</a>
+            <a href="marketplace.html" data-prive>Marketplace</a>
+            <a href="index.html" id="lien-compte">Mon compte</a>
+            <button id="deconnexion" type="button" hidden>Se déconnecter</button>
+        </nav>
+    </header>
+    
+    <div class="conteneur">
+            <p id="etat" role="status">Chargement…</p>
+            <main id="contenu" hidden>
+                <nav class="sous-menu" aria-label="Messagerie">
+                    <a href="messagerie.html">Messagerie</a>
+                    <a href="contacts.html">Contacts</a>
+                    <a href="conversations.html">Conversations</a>
+                </nav>
+                
+                <h1>Contacts</h1>
+                <p>Les autres membres inscrits sur la plateforme.</p>
+                <label for="recherche-contact">Rechercher un pseudo</label>
+                <input id="recherche-contact" type="search" placeholder="Un pseudo…">
+                <div id="contacts" class="liste">
+
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

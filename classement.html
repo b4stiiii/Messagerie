@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Meilleures ventes - Ma Messageries</title><link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+        <script src="config.js" defer></script><script src="app.js" defer></script>
+    </head>
+
+        <body data-page="classement">
+            <header>
+                <a class="marque" href="index.html">Ma Messagerie</a>
+                <nav aria-label="Navigation principale">
+                    <a href="contacts.html" data-prive>Contacts</a>
+                    <a href="messagerie.html" data-prive>Messagerie</a>
+                    <a href="marketplace.html" data-prive>Marketplace</a>
+                    <a href="index.html" id="lien-compte">Mon compte</a>
+                    <button id="deconnexion" type="button" hidden>Se déconnecter</button>
+                </nav>
+            </header>
+            
+            <div class="conteneur">
+                <p id="etat" role="status">Chargement…</p>
+                <main id="contenu" hidden>
+                    <nav class="sous-menu" aria-label="Marketplace">
+                        <a href="marketplace.html">Marketplace</a>
+                        <a href="creer-annonce.html">Créer une annonce</a>
+                        <a href="annonces.html">Les annonces</a>
+                        <a href="mes-annonces.html">Mes annonces</a>
+                        <a href="classement.html">Classement</a>
+                    </nav>
+                    
+                    <h1>Les meilleures ventes du mois</h1>
+                    <p>Les ventes clôturées ce mois-ci, classées par prix final. Le premier objet est la plus grosse vente du mois.</p>
+                    <p class="petit">Période calculée en UTC. Une vente correspond ici à une enchère remportée, sans paiement intégré.</p>
+                    <div id="annonces" class="grille">
+
+                    </div>
+                </main>
+            </div>
+        </body>
+</html>

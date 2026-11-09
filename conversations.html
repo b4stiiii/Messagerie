@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Conversations - Ma Messageries</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer>
+        </script>
+        
+        <script src="config.js" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body data-page="conversations">
+            <header><a class="marque" href="index.html">Ma Messageries</a>
+                <nav aria-label="Navigation principale">
+                    <a href="contacts.html" data-prive>Contacts</a>
+                    <a href="messagerie.html" data-prive>Messagerie</a>
+                    <a href="marketplace.html" data-prive>Marketplace</a>
+                    <a href="index.html" id="lien-compte">Mon compte</a>
+                    <button id="deconnexion" type="button" hidden>Se déconnecter</button>
+                </nav>
+            </header>
+            <div class="conteneur">
+                <p id="etat" role="status">Chargement…</p>
+                <main id="contenu" hidden>
+                    <nav class="sous-menu" aria-label="Messagerie">
+                        <a href="messagerie.html">Messagerie</a>
+                        <a href="contacts.html">Contacts</a>
+                        <a href="conversations.html">Conversations</a>
+                    </nav>
+                    
+                    <h1>Conversations</h1>
+                    <div class="discussion">
+                        <aside><h2>Mes échanges</h2>
+                            <div id="conversations" class="liste">
+                            </div>
+                            
+                            <a href="contacts.html">Commencer une conversation</a>
+                        </aside>
+                        <section class="carte">
+                            <h2 id="destinataire">Choisis une conversation</h2>
+                            <div id="messages" class="messages" aria-live="polite"></div>
+                            <form id="envoi-message" hidden>
+                                <label for="texte-message">Ton message</label>
+                                <textarea id="texte-message" name="content" required maxlength="2000" rows="3">
+
+                                </textarea>
+                                <button>Envoyer</button>
+                            </form>
+                        </section>
+                    </div>
+                </main>
+            </div>
+    </body>
+</html>

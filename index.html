@@ -1,23 +1,59 @@
-
-<h1> Ma messagerie
-</h1>
-
-<p> Salut à toi jeune aventurier, <br> Bienvenue dans ta messagerie 
-</p>
-
-<h2> <a 
-    href="contacts.html">
-    Mes contacts 
-    </a>
-</h2>
-
-<h3> Mes conversations
-</h3>
-
-<h4>  <a 
-    href="Marketplace.html">
-    Marketplace
-    </a>
-</h4>
-
-
+<!doctype html>
+<html lang="fr">
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bienvenue - Ma Messagerie</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+        <script src="config.js" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body data-page="index">
+        <header><a class="marque" href="index.html">Ma Messagerie</a>
+            <nav aria-label="Navigation principale">
+                <a href="contacts.html" data-prive>Contacts</a>
+                <a href="messagerie.html" data-prive>Messagerie</a>
+                <a href="marketplace.html" data-prive>Marketplace</a>
+                <a href="index.html" id="lien-compte">Mon compte</a>
+                <button id="deconnexion" type="button" hidden>Se déconnecter</button>
+            </nav>
+        </header>
+        <div class="conteneur"><p id="etat" role="status">Chargement…</p>
+            <main id="contenu" hidden>
+                <section id="compte">
+                    <h1>Bienvenue  dans Ma Messagerie</h1>
+                    <p>Crée ton compte pour discuter et découvrir les enchère.</p>
+                    <div class="colonnes">
+                        <form id="inscription">
+                            <h2>Créer un compte</h2>
+                            <label for="pseudo">Pseudo</label>
+                            <input id="pseudo" name="pseudo" required minlength="2" maxlength="30" autocomplete="nickname">
+                            <label for="email-inscription">Adresse courriel</label>
+                            <input id="email-inscription" name="email" type="email" required autocomplete="email">
+                            <label for="mdp-inscription">Mot de passe</label>
+                            <input id="mdp-inscription" name="password" type="password" minlength="8" required autocomplete="new-password">
+                            <p class="petit">Au moins 8 caractères.</p>
+                            <button>Créer mon compte</button>
+                        </form>
+                        <form id="connexion">
+                            <h2>Déjà un compte ?</h2>
+                            <label for="email-connexion">Adresse courriel</label>
+                            <input id="email-connexion" name="email" type="email" required autocomplete="email">
+                            <label for="mdp-connexion">Mot de passe</label>
+                            <input id="mdp-connexion" name="password" type="password" required autocomplete="current-password">
+                            <button>Se connecter</button>
+                        </form>
+                    </div>
+                </section>
+                <section id="connecte" hidden>
+                    <h1>Content de te retrouver.</h1>
+                    <p>Ton compte est connecté.</p>
+                    <div class="choix">
+                        <a class="bouton" href="messagerie.html">Ma messagerie</a>
+                        <a class="bouton" href="marketplace.html">La marketplace</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

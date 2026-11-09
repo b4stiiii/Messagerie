@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+    <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Les annonces - Ma Messagerie</title><link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="config.js" defer></script><script src="app.js" defer></script>
+</head>
+
+    <body data-page="annonces">
+        <header><a class="marque" href="index.html">Ma Messagerie</a>
+            <nav aria-label="Navigation principale">
+                <a href="contacts.html" data-prive>Contacts</a>
+                <a href="messagerie.html" data-prive>Messagerie</a>
+                <a href="marketplace.html" data-prive>Marketplace</a>
+                <a href="index.html" id="lien-compte">Mon compte</a>
+                <button id="deconnexion" type="button" hidden>Se déconnecter</button>
+            </nav>
+        </header>
+        
+        <div class="conteneur">
+            <p id="etat" role="status">Chargement…</p>
+            <main id="contenu" hidden>
+                            <nav class="sous-menu" aria-label="Marketplace">
+                            <a href="marketplace.html">Marketplace</a>
+                            <a href="creer-annonce.html">Créer une annonce</a>
+                            <a href="annonces.html">Les annonces</a>
+                            <a href="mes-annonces.html">Mes annonces</a>
+                            <a href="classement.html">Classement</a>
+                        </nav>
+                        
+                    <h1>Les annonces</h1>
+                    <div class="colonnes filtres"><div>
+                        <label for="recherche">Rechercher</label>
+                        <input id="recherche" type="search" placeholder="Un objet…">
+                    </div>
+                    
+                    <div>
+                        <label for="filtre">Catégorie</label>
+                        <select id="filtre">
+                            <option value="">Toutes</option>
+                            <option>Mobilier</option>
+                            <option>Musique</option>
+                            <option>Véhicules</option>
+                            <option>Autres</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="actualiser" type="button">Actualiser les prix</button>
+
+                <div id="annonces" class="grille"></div>
+            </main>
+        </div>
+    </body>
+</html>
